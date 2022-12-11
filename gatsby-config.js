@@ -26,12 +26,20 @@ module.exports = {
       options: {
         navigation: [
           {
-            title: `Blog`,
-            slug: `/blog`,
+            title: `Forsíða`,
+            slug: `/`,
           },
           {
-            title: `About`,
-            slug: `/about`,
+            title: `Félagsaðild`,
+            slug: `/felagsadild`,
+          },
+          {
+            title: `Keppnir`,
+            slug: `/keppnir`,
+          },
+          {
+            title: `Um félagið`,
+            slug: `/um-felagid`,
           },
         ],
         externalLinks: [

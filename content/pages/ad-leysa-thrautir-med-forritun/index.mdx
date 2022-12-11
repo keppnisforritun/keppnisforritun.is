@@ -1,0 +1,264 @@
+---
+title: "Að leysa þrautir með forritun"
+slug: "/ad-leysa-thrautir-med-forritun"
+---
+
+import ReactSpoiler from "react-spoiler";
+
+Með því að forrita tölvur er hægt að láta þær leysa fyrir okkur flóknar þrautir,
+á broti af tímanum sem það tekur okkur. Hér fyrir neðan eru nokkur dæmi um svona
+þrautir, ásamt forritum sem leysa þær. Þessi forrit eru skrifuð í
+forritunarmálinu Python, og þarf að setja upp forritunarmálið í tölvunni svo að
+tölvan geti keyrt forritin.
+
+## Forritunarmálið Python
+
+Forritunarmálið Python er í grunninn mjög einfalt, og hentar því vel sem fyrsta
+forritunarmál. Á sama tíma getur það verið mjög kröftugt, og er mikið notað í
+bæði atvinnu og akademíu.
+
+Hægt er að ná í Python með því að fylgja leiðbeiningunum
+[hér](https://wiki.python.org/moin/BeginnersGuide/Download). Lausnirnar fyrir
+neðan notast við útgáfu 3 af Python.
+
+## Orðalisti
+
+Sumar af lausnunum styðjast við lista af íslenskum orðum. Þennan lista er hægt
+að nálgast
+[hér](https://raw.githubusercontent.com/mideind/Netskrafl/master/resources/ordalisti.full.sorted.txt)
+(hægri smella og velja “Save link as…”). Orðalistinn heitir
+ordalisti.full.sorted.txt og þarf að vera staðsettur á sama stað og lausnirnar
+svo þær geti lesið hann.
+
+## Tenglar
+
+Við mælum með að skoða eftirfarandi tengla til að læra meira um forritun og
+forritunarkeppnir:
+
+- [Codecademy](https://www.codecademy.com/courses/learn-python): Kennslusíða um forritun þar sem hægt er að læra um forritunarmálið Python
+- Vefsíða [Forritunarkeppni Grunnskólanna](https://kodun.is/): Verður haldin næst í mars 2020
+- Vefsíða [Forritunarkeppni Framhaldsskólanna](http://forritun.is/): Verður haldin næst í mars 2020
+    - Hægt að finna gömul verkefni á vefsíðunni
+    - [Iceland Kattis](https://iceland.kattis.com/problems): Vefsíða þar sem er hægt að spreyta sig á gömlum verkefnum
+
+- - - - - -
+
+## Þraut 1 – Orðafjöldi
+
+Við viljum komast að því hvað eru mörg orð í orðalistanum okkar. Skrifið forrit
+sem les orðalistann línu fyrir línu, hækkar teljara í hvert skipti, og skrifar
+að lokum út gildi teljarans, sem semsvarar þá hversu margar línur og orð voru
+lesin.
+
+<ReactSpoiler blur={8} hoverBlur={6}>
+```python
+ordalisti = 'ordalisti.full.sorted.txt'
+
+fjoldi_orda = 0
+with open(ordalisti, 'r') as skra:
+for lina in skra.read().splitlines():
+    fjoldi_orda = fjoldi_orda + 1
+
+print(fjoldi_orda)
+```
+</ReactSpoiler>
+
+- - - - - -
+
+## Þraut 2 – Samhverfur
+
+Samhverfa er orð sem er alveg eins, hvort sem það er lesið áfram eða afturábak.
+Til dæmis eru “amma” og “rassar” orð sem eru samhverfur. Skrifið forrit sem
+finnur öll orð í orðalistanum okkar sem eru samhverfur.
+
+(Til gamans: listi af samhverfum á [Baggalútur](https://www.baggalutur.is/samhverfur.php))
+
+<ReactSpoiler blur={8} hoverBlur={6}>
+```python
+def ord_ofugt(ord):
+    return ord[::-1]
+
+def samhverfa(ord):
+    return ord == ord_ofugt(ord)
+
+ordalisti = 'ordalisti.full.sorted.txt'
+
+with open(ordalisti, 'r') as skra:
+    for lina in skra.read().splitlines():
+        if samhverfa(lina):
+            print(lina)
+```
+</ReactSpoiler>
+
+- - - - - -
+
+## Þraut 3 – Hengimaður
+
+Við erum að spila hengimann. Orðið sem við erum að giska á lítur núna út svona:
+
+**`_ k _ á v _ r _ _`**
+
+Skrifið forrit sem notar orðalistann okkar til að finna hvaða orð koma til greina.
+
+<ReactSpoiler blur={8} hoverBlur={6}>
+```python
+def passar(mynstur, ord):
+    if len(mynstur) != len(ord):
+        return False
+
+    for i in range(len(mynstur)):
+        if mynstur[i] != '_':
+            if mynstur[i] != ord[i]:
+                return False
+
+    return True
+
+ordalisti = 'ordalisti.full.sorted.txt'
+mynstur = '_k_áv_r__'
+
+with open(ordalisti, 'r') as skra:
+    for lina in skra.read().splitlines():
+        if passar(mynstur, lina):
+            print(lina)
+```
+</ReactSpoiler>
+
+- - - - - -
+
+## Þraut 4 – Stafarugl
+
+Við erum að leita að orði. Það er búið að rugla röðinni á stöfunum í orðinu, og
+núna lítur það svona út:
+
+**`gaulrind`**
+
+Skrifið forrit sem notar orðalistann okkar til að finna hvaða orð koma til greina.
+
+<ReactSpoiler blur={8} hoverBlur={6}>
+```python
+def passar(rugl, ord):
+    return sorted(rugl) == sorted(ord)
+
+ordalisti = 'ordalisti.full.sorted.txt'
+rugl = 'gaulrind'
+
+with open(ordalisti, 'r') as skra:
+    for lina in skra.read().splitlines():
+        if passar(rugl, lina):
+            print(lina)
+```
+</ReactSpoiler>
+
+- - - - - -
+
+## Þraut 5 – Skrafl
+
+Við erum að spila Skrafl. Við höfum eftirfarandi stafi í borðinu hjá okkur:
+
+**`t v o r f a l u n ö`**
+
+Skrifið forrit sem notar orðalistann okkar til að finna hvað er lengsta orðið
+sem við getum myndað með þessum stöfum.
+
+<ReactSpoiler blur={8} hoverBlur={6}>
+```python
+from collections import Counter
+
+def passar(stafir, ord):
+    stafir_fjoldi = Counter(stafir)
+    ord_fjoldi = Counter(ord)
+
+    for (stafur, fjoldi) in ord_fjoldi.items():
+        if fjoldi > stafir_fjoldi[stafur]:
+            return False
+
+    return True
+
+ordalisti = 'ordalisti.full.sorted.txt'
+rugl = 'tvorfalunö'
+
+with open(ordalisti, 'r') as skra:
+    for lina in skra.read().splitlines():
+        if passar(rugl, lina):
+            print(lina)
+```
+</ReactSpoiler>
+
+- - - - - -
+
+## Þraut 6 – Orðaleit
+
+Við erum að spila Orðaleit. Leikborðið lítur svona út:
+
+
+**`mnvhríeljunarnrr`**<br/>
+**`uófensvavtklætéi`**<br/>
+**`npaiglsnöeðgrttt`**<br/>
+**`uarmaagöllðstksk`**<br/>
+**`jlaanarbnuianiak`**<br/>
+**`kahkaflsbgrýhnky`**<br/>
+**`ibiosænrpfevaniþ`**<br/>
+**`eaúmnudnroýlnaru`**<br/>
+**`lmánfraæðttmspip`**<br/>
+**`gpnarnðluentrkfy`**<br/>
+**`naarairðtnglakie`**<br/>
+**`ölrnnguaerdtsrrt`**<br/>
+**`slbglnfngsaóaurs`**<br/>
+**`aaaaaaounnrmamýk`**<br/>
+**`rrverrukibatilff`**<br/>
+**`frðiðostöjksnáaa`**<br/>
+
+Leikurinn snýst um að finna orð í leikborðinu, hvort sem þau eru lárétt, lóðrétt
+eða á ská, afturábak eða áfram. Skrifið forrit sem notar orðalistann okkar til
+að finna lengsta orðið sem má finna á leikborðinu.
+
+<ReactSpoiler blur={8} hoverBlur={6}>
+```python
+ordalisti = 'ordalisti.full.sorted.txt'
+ordabok = set()
+
+with open(ordalisti, 'r') as skra:
+    for lina in skra.read().splitlines():
+        ordabok.add(lina)
+
+bord = '''
+mnvhríeljunarnrr
+uófensvavtklætéi
+npaiglsnöeðgrttt
+uarmaagöllðstksk
+jlaanarbnuianiak
+kahkaflsbgrýhnky
+ibiosænrpfevaniþ
+eaúmnudnroýlnaru
+lmánfraæðttmspip
+gpnarnðluentrkfy
+naarairðtnglakie
+ölrnnguaerdtsrrt
+slbglnfngsaóaurs
+aaaaaaounnrmamýk
+rrverrukibatilff
+frðiðostöjksnáaa
+'''
+
+bord = bord.strip().splitlines()
+N = len(bord)
+M = len(bord[0])
+
+for x in range(N):
+    for y in range(M):
+        for dx in range(-1,2):
+            for dy in range(-1,2):
+                if dx == 0 and dy == 0:
+                    continue
+
+                cx = x
+                cy = y
+                ord = ''
+                while 0 <= cx < N and 0 <= cy < M:
+                    ord += bord[cx][cy]
+                    if ord in ordabok and len(ord) > 5:
+                        print(ord, x, y, dx, dy)
+                    cx += dx
+                    cy += dy
+```
+</ReactSpoiler>
