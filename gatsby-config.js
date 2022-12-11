@@ -15,7 +15,7 @@ module.exports = {
     siteHeadline: `Keppnisforritunarfélag Íslands`,
     siteUrl: `https://keppnisforritun.is`,
     siteDescription: `Félag keppnisforritara á Íslandi`,
-    siteImage: `/banner.jpg`,
+    siteImage: `/logo/Logo-Black-768x462.png`,
     author: `Stjórn Keppnisforritunarfélags Íslands`,
   },
   trailingSlash: `never`,
