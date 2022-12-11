@@ -30,6 +30,7 @@ const Footer = () => {
             src="../../../../static/computer-is.png"
             sx={{ "max-width": "220px" }}
             quality={100}
+            placeholder="none"
           />
         </a>
       </div>
