@@ -28,9 +28,10 @@ const Footer = () => {
         <a href="https://www.computer.is/">
           <StaticImage
             src="../../../../static/computer-is.png"
-            sx={{ "max-width": "220px" }}
+            sx={{ maxWidth: "220px" }}
             quality={100}
             placeholder="none"
+            alt="computer.is"
           />
         </a>
       </div>
