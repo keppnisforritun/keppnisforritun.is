@@ -1,0 +1,32 @@
+.mt-0 {
+    margin-top: 0;
+}
+.mt-1 {
+    margin-top: 5px;
+}
+.mt-2 {
+    margin-top: 10px;
+}
+.mt-3 {
+    margin-top: 15px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.is-hidden {
+    display: none !important;
+}
+
+.font-italic {
+    font-style: italic;
+}
+
+.monospace {
+    font-family: monospace;
+}
+
+.centering {
+    text-align: center;
+}

@@ -1,0 +1,150 @@
+.standings-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.standings-table-legend {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 19px;
+    margin-bottom: 15px;
+}
+
+.standings-table-legend-statuses {
+    display: flex;
+    column-gap: 18px;
+    align-items: flex-end;
+}
+
+.standings-table-legend-status {
+    display: flex;
+    align-items: center;
+}
+
+.standings-table-legend-status .status-icon {
+    margin-right: 6px;
+}
+
+.standings-table .status-icon {
+    font-size: 14px;
+}
+
+.status-icon.standings-legend-first, .status-icon.standings-cell-first {
+    background-color: #39a137;
+}
+
+.status-icon.standings-legend-solved, .status-icon.standings-cell-solved {
+    background-color: #9cd09b;
+}
+
+.status-icon.standings-legend-partial {
+    background: linear-gradient(to top left,
+        hsl(10, 100%, 55%) -20%,
+        hsl(43, 100%, 68%) 40%,
+        hsl(81, 60%, 69%) 70%,
+        hsl(119, 36%, 71%) 100%);
+}
+
+.status-icon.standings-legend-attempted, .status-icon.standings-cell-attempted {
+    background-color: #ff411a;
+}
+
+.status-icon.standings-legend-pending, .status-icon.standings-cell-pending {
+    background-color: #d9d9d9;
+}
+
+.standings-legend-superregion {
+    color: #ffbe00;
+    font-size: 12px;
+    width: 12px;
+    height: 12px;
+    margin-right: 6px;
+}
+
+.standings-legend-me {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #9cd09b;
+    background-color: #e9f7e9;
+    margin-right: 6px;
+}
+
+.standings-table-result-cell {
+    display: flex;
+    font-size: 13px;
+    height: 30px;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.standings-table-result-cell .status-icon {
+    height: 25px;
+    width: 25px;
+    margin-right: 6px;
+}
+
+.standings-table-result-cell-time {
+    font-size: 11px;
+    color: #838383;
+}
+
+.table2 > * > tr > .standings-cell-time, .table2 > * > tr > .standings-cell-score {
+    padding-right: 25px;
+}
+
+.standings-cell-country img {
+    max-width: 22px;
+    max-height: 22px;
+    border-radius: 50%;
+}
+
+.standings-cell-university img {
+    max-width: 22px;
+    max-height: 22px;
+}
+
+tr.standings-row-highlight td {
+    background-color: #e9f7e9;
+    border-color: #9cd09b;
+    border-style: solid;
+    border-width: 1px 0;
+}
+
+tr.standings-row-highlight td:first-child {
+    border-left-width: 1px;
+}
+
+tr.standings-row-highlight td:last-child {
+    border-right-width: 1px;
+}
+
+.scoreboard_filters .filter_row td {
+    padding: 3px;
+    height: 30px;
+}
+.scoreboard_filters .filter_row .filter_item {
+    border-radius: 3px;
+    padding: 5px;
+    margin: 2px 4px;
+    background-color: #f3f3f9;
+}
+
+.scoreboard_filters {
+    margin-bottom: 8px;
+}
+
+.scoreboard_filters .filter_row .filter_item.active {
+    background-color: black;
+}
+
+.scoreboard_filters .filter_row .filter_item .filter_name {
+    color: black;
+}
+
+.scoreboard_filters .filter_row .filter_item .filter_name.active {
+    color: white;
+}

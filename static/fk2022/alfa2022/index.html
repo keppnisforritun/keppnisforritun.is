@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alfa 2022</title>
+
+    <script type="text/javascript">
+        window.page_loaded_at = new Date();
+    </script>
+
+    <link rel="stylesheet" href="css/style.css?f7b849=">
+    <link href="assets/b3b5b8a9e24cad13e6c05102611b435c/jquery-ui-dist/jquery-ui.theme.min.css" rel="stylesheet">
+    <script src="assets/b3b5b8a9e24cad13e6c05102611b435c/jquery/dist/jquery.min.js"></script>
+    <script src="assets/b3b5b8a9e24cad13e6c05102611b435c/jquery-ui-dist/jquery-ui.min.js"></script>
+    <script type="module" src="js/1aa088db91e178e566a348906e43a13c/modules/timezone.js"></script>
+    <link href="assets/b3b5b8a9e24cad13e6c05102611b435c/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="assets/b3b5b8a9e24cad13e6c05102611b435c/google_web_fonts/google_web_fonts.css" rel="stylesheet" type="text/css">
+    <script type="module" src="js/1aa088db91e178e566a348906e43a13c/pages/contest/header.js"></script>
+
+    <script type="text/javascript">
+    jQuery.ns = function (namespace) {
+        var parts = namespace.split('.');
+        var last = window;
+        for (var i = 0; i < parts.length; i++) {
+            last = last[parts[i]] || (last[parts[i]] = {});
+        }
+        return last;
+    };
+</script>
+    <script>
+const KattisErrorMessages = {"INTERNAL_SERVER_ERROR":"Internal server error.","ACCESS_DENIED":"Access denied.","NOT_AUTHENTICATED":"Not authenticated.","METHOD_NOT_ALLOWED":"Method not allowed.","INVALID_JSON":"JSON cannot be decoded or encoded data is deeper than the recursion limit.","BAD_CSRF_TOKEN":"Token does not match session's csrf_token","SESSION_NAME_EMPTY":"Session's name must be non empty.","SESSION_START_TIME_EMPTY":"Session's start time must be non empty.","SESSION_START_TIME_PASSED":"Session's start time has already passed.","SESSION_DURATION_EMPTY":"Session's duration must be non empty.","SESSION_DURATION_NEGATIVE":"Session's duration must be a positive number.","SESSION_DURATION_EXCEEDED":"Maximum duration for the session was exceeded.","SESSION_ALREADY_STARTED":"The session has already started.","SESSION_ALREADY_FINISHED":"The session is already finished.","USER_CREATED_SESSION_DURATION_EXCEEDED":"Contest cannot be longer than 168 hours.","INVALID_PROBLEM_SCORE":"Invalid problem score.","INVALID_SESSION_SHORTNAME":"Invalid shortname for the session.","INVALID_SESSION_CUTOFF":"Invalid cutoff for the session.","INVALID_USER_NAME":"Invalid username or email.","SESSION_NOT_FOUND":"No such session.","COURSE_NOT_FOUND":"No such course.","OFFERING_NOT_FOUND":"No such offering.","TEACHER_NOT_FOUND":"No such teacher.","TEACHER_CANNOT_REMOVE_SELF":"You may not remove yourself as a teacher unless you are an administrator.","AUTHOR_NOT_FOUND":"No such author.","JUDGE_NOT_FOUND":"No such judge.","JUDGE_ALREADY_EXIST":"The user is already a judge.","TEACHER_ALREADY_EXIST":"The user is already a teacher.","PROBLEM_NOT_FOUND":"No such problem.","TEAM_NOT_FOUND":"No such team.","SESSION_PROBLEM_ALREADY_EXIST":"The problem has been already added to the session.","SESSION_PROBLEM_DOES_NOT_EXIST":"The problem does not relate to the session.","PROBLEM_INDEX_NEGATIVE":"Problem index must be non negative.","AUTHOR_IS_CURRENT_TEAM_MEMBER":"The user you tried to add is already a member of the current team.","AUTHOR_IS_ANOTHER_TEAM_MEMBER":"The user you tried to add is already a member of another team in the current session.","AUTHOR_IS_JUDGE":"The user you tried to add is a judge.","AUTHOR_IS_NOT_TEAM_MEMBER":"The user you tried to remove is not a team member.","JUDGE_IS_TEAM_MEMBER":"The user you tried to add is a session team member or invitee.","SESSION_PUBLISHING_DENIED":"You do not have permission to publish this session.","CANNOT_PUBLISH_HISTORICAL_SESSION":"You cannot publish a session with a historical start time.","INVALID_TEAM_NAME_TOO_LONG":"The team name you are trying to add is too long","TEAM_NAME_IS_NOT_VISIBLE":"The team name you are trying to add is not visible"};
+jQuery.extend(jQuery.ns('Kattis.error'), (function () {
+    return {
+        get_msg: function (error_code) {
+            return KattisErrorMessages[error_code];
+        },
+
+        show_msg: function (base_message, error_code) {
+            if (error_code) {
+                alert(base_message + ": " + this.get_msg(error_code));
+            } else {
+                alert(base_message);
+            }
+        },
+
+        show_xhr_msg: function (elem, jqXHR) {
+            var base_message = elem.data('fail-msg');
+            var code = jqXHR.responseJSON && jqXHR.responseJSON.error &&
+                       jqXHR.responseJSON.error.code;
+            this.show_msg(base_message, code);
+        }
+    }
+})());
+</script>
+</head>
+
+<body class="page-master-layout page-contest">
+
+<main class="l-offset_nomenu">
+<div class="wrap-fullwidth" id="wrapper">
+    
+
+
+
+
+
+
+
+    
+
+                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="l-strip_list">
+            <div class="strip">
+            <div class="strip-item strip-item-vertical strip-item-align-start fu">
+                <div class="full-width">
+                    <div id="session-header-wrap"><div id="session_banner"><img src="images/sessions/fk2022alpha" alt="" /></div><div id="contest_time" data-props="{&quot;has_start&quot;:true,&quot;elapsed_seconds&quot;:99970,&quot;total_seconds&quot;:&quot;21600&quot;,&quot;refresh_at_start&quot;:true}">
+    <div class="contest-progress session-finished">
+            <div class="info upper">
+                <div class="contest-start">
+                    <h4>Start</h4>
+                    2022-03-19 11:00 CET
+                </div>
+                <div class="contest-title">
+                    <h2 class="title">Alfa 2022</h2>
+                </div>
+                <div class="contest-end">
+                    <h4>End</h4>
+                    2022-03-19 17:00 CET
+                </div>
+            </div>
+        <div class="progress">
+                                                                <div class="progress-bar" style="width: 100.00%"></div>
+            <div class="progress-status nearend">
+                The end is near!            </div>
+
+            <div class="progress-status finished">
+                Contest is over.            </div>
+
+            <div class="progress-status nostart">
+                Not yet started.            </div>
+
+            <div class="progress-status notstarted">
+                Contest                is starting in                <span class="countdown">-1 day 3:46:10</span>
+            </div>
+        </div>
+
+        <div class="info only_in_contest">
+            <div>
+                <h4>Time elapsed</h4>
+                <span class="count_elapsed">6:00:00</span>
+            </div>
+            <div>
+                <h4>Time remaining</h4>
+                <span class="count_remaining">0:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+        <div class="strip">
+        <div class="strip-item strip-item-vertical strip-item-align-start">
+            
+    <div class="standings-header">
+        <h1>Standings</h1>
+        
+    <div>
+        
+            </div>
+
+    </div>
+    <hr>
+
+
+            
+            
+            <div class="standings-table-legend">
+                <div>
+                    
+    <div>
+    
+        </div>
+
+                    
+<div>
+    <span class="standings-table-legend-statuses">
+            </span>
+</div>
+
+                </div>
+                
+    <div class="standings-table-legend-statuses">
+                            <span class="standings-table-legend-status">
+                <i class="fas fa-check status-icon standings-legend-solved"></i>
+                Full score            </span>
+            <span class="standings-table-legend-status">
+                <i class="fas fa-check status-icon standings-legend-partial"></i>
+                Partial score            </span>
+                <span>
+            <span class="standings-table-legend-status">
+                <i class="fas fa-times status-icon standings-legend-attempted"></i>
+                Attempted            </span>
+        </span>
+        <span>
+            <span class="standings-table-legend-status">
+                <i class="fas fa-question status-icon standings-legend-pending"></i>
+                Pending judgement            </span>
+        </span>
+    </div>
+
+            </div>
+
+            <table class="table2 standings-table">
+                
+    <thead><tr>
+                        <th colspan="2">Team</th>
+
+                    
+                                            
+<th style="width: 34.15px"><a>A (100)</a></th>
+<th style="width: 34.15px"><a>B (100)</a></th>
+<th style="width: 34.15px"><a>C (100)</a></th>
+<th style="width: 34.15px"><a>D (100)</a></th>
+<th style="width: 34.15px"><a>E (100)</a></th>
+<th style="width: 34.15px"><a>F (100)</a></th>
+<th style="width: 34.15px"><a>G (100)</a></th>
+<th style="width: 34.15px"><a>H (100)</a></th>
+<th style="width: 34.15px"><a>I (100)</a></th>
+<th style="width: 34.15px"><a>J (100)</a></th>
+<th style="width: 34.15px"><a>K (100)</a></th>
+<th style="width: 34.15px"><a>L (100)</a></th>
+<th style="width: 34.15px"><a>M (100)</a></th>
+<th style="width: 34.15px"><a>N (100)</a></th>
+<th style="width: 34.15px"><a>O (100)</a></th>
+<th style="width: 34.15px"><a>P (100)</a></th>
+<th style="width: 34.15px"><a>Q (100)</a></th>
+<th style="width: 34.15px"><a>R (100)</a></th>
+<th style="width: 34.15px"><a>S (100)</a></th>
+<th style="width: 34.15px"><a>T (100)</a></th>
+        
+                                    <th class="table-align-right standings-cell-score">Score</th>
+                                    <th class="table-align-right standings-cell-time">Time</th>
+                                                    </tr>
+    </thead>
+
+                                                                                            
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>1</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    S̸͋́e̵͂̏t̶͂̃n̶̓̍i̴̓̕n̵̚͝g̸̑̿a̷̍͋r̴͑̔b̷̑̎ȳ̶̆g̸̅̊g̷̿͂i̸͊͝ǹ̷͊g̵̓̓a̷͗͠ȑ̵̅ ̸̽̌v̸̍̃í̷̚ľ̶̇l̸͆̈́a̴̓̉
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(43.000, 100.000%, 68.000%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        50<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(39.235, 100.000%, 66.517%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        44.29<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            4 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(93.667, 52.000%, 69.667%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        80<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(23.200, 100.000%, 60.200%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        20<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            6 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">1194.29</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">345</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>2</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    Brynjar átti að velja nafn...
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(29.800, 100.000%, 62.800%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        30<br>
+                        <span class="standings-table-result-cell-time">
+                            4 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(43.000, 100.000%, 68.000%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        50<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(28.358, 100.000%, 62.232%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        27.81<br>
+                        <span class="standings-table-result-cell-time">
+                            8 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(19.900, 100.000%, 58.900%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        15<br>
+                        <span class="standings-table-result-cell-time">
+                            4 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            4 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            5 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(23.200, 100.000%, 60.200%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        20<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(16.600, 100.000%, 57.600%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        10<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">652.81</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">359</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>3</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    6d6f6e6b65
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(43.000, 100.000%, 68.000%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        50<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(108.599, 42.569%, 70.453%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        91.78<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(36.400, 100.000%, 65.400%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        40<br>
+                        <span class="standings-table-result-cell-time">
+                            5 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            4 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            7 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">581.78</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">346</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>4</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    E³
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(23.200, 100.000%, 60.200%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        20<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            9 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(43.000, 100.000%, 68.000%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        50<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(39.382, 100.000%, 66.575%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        44.51<br>
+                        <span class="standings-table-result-cell-time">
+                            7 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(36.400, 100.000%, 65.400%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        40<br>
+                        <span class="standings-table-result-cell-time">
+                            7 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">554.51</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">345</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>5</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    Veni, vidi, vici
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(23.200, 100.000%, 60.200%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        20<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(81.000, 60.000%, 69.000%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        70<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(29.800, 100.000%, 62.800%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        30<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            7 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">520</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">335</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>6</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    New Alresford
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            11 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            39 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            10 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="partial-score"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-partial-score"
+                       style="background-color: hsl(36.400, 100.000%, 65.400%)"></i>
+                    <span class="standings-table-result-cell-text">
+                        40<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">440</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">329</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>7</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    syntax error
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">400</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">288</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>8</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    Team_name
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="solved"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-check status-icon standings-cell-solved"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        100<br>
+                        <span class="standings-table-result-cell-time">
+                            2 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            4 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            3 tries
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td class="attempted"
+                                >
+
+                            <span class="standings-table-result-cell">
+                    <i class="fas fa-times status-icon standings-cell-attempted"
+                       ></i>
+                    <span class="standings-table-result-cell-text">
+                        0<br>
+                        <span class="standings-table-result-cell-time">
+                            1 try
+                        </span>
+                    </span>
+                </span>
+                    </td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">100</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time"> 99</td>
+            
+        </tr>
+
+
+                                                                                                        
+                                                
+                                                
+                                                
+                        
+            <tr>
+    
+            <td class="table-item-autofit"><strong>9</strong></td>
+    
+            <td class="standings-cell--expand">
+    
+            <div>
+                    Kartefluflagakóngurinn
+        
+                </div>
+        </td>
+    
+    
+    
+    
+                        
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+                    
+    
+            <td></td>
+    
+            
+                        <td class="table-item-autofit table-align-right standings-cell-score">0</td>
+                            <td class="table-item-autofit table-align-right standings-cell-time">  0</td>
+            
+        </tr>
+
+
+                                                            
+                
+                                    
+    <tr class="table2-header">                    <td colspan="2"></td>
+        
+                                            
+<th style="width: 34.15px"><a>A (100)</a></th>
+<th style="width: 34.15px"><a>B (100)</a></th>
+<th style="width: 34.15px"><a>C (100)</a></th>
+<th style="width: 34.15px"><a>D (100)</a></th>
+<th style="width: 34.15px"><a>E (100)</a></th>
+<th style="width: 34.15px"><a>F (100)</a></th>
+<th style="width: 34.15px"><a>G (100)</a></th>
+<th style="width: 34.15px"><a>H (100)</a></th>
+<th style="width: 34.15px"><a>I (100)</a></th>
+<th style="width: 34.15px"><a>J (100)</a></th>
+<th style="width: 34.15px"><a>K (100)</a></th>
+<th style="width: 34.15px"><a>L (100)</a></th>
+<th style="width: 34.15px"><a>M (100)</a></th>
+<th style="width: 34.15px"><a>N (100)</a></th>
+<th style="width: 34.15px"><a>O (100)</a></th>
+<th style="width: 34.15px"><a>P (100)</a></th>
+<th style="width: 34.15px"><a>Q (100)</a></th>
+<th style="width: 34.15px"><a>R (100)</a></th>
+<th style="width: 34.15px"><a>S (100)</a></th>
+<th style="width: 34.15px"><a>T (100)</a></th>
+        
+                                                <td colspan="2 "></td>
+                        </tr>
+    
+                            </table>
+                    </div>
+    </div>
+</div>
+</div>
+</main>
+</body>
+
+<script>
+if (location.search.indexOf("autoscroll=") != -1) {
+    var params = location.search.split("autoscroll=")[1].split("&")[0].split(",");
+    var initialDelay = +params[0];
+    var scrollSpeed = +params[1];
+    var endDelay = +params[2];
+    var scrollingElement = document.scrollingElement || document.documentElement;
+    scrollingElement.scrollTop = 0;
+    setTimeout(function() {
+        var scrollDist = scrollingElement.scrollHeight - innerHeight;
+        var start = null;
+        var update = function(time) {
+            if (start === null) start = time;
+            var t = time - start;
+            var dist = t / 1000 * (+scrollSpeed || 1);
+            if (dist > scrollDist) {
+                scrollingElement.scrollTop = scrollDist;
+                done();
+            } else {
+                scrollingElement.scrollTop = dist;
+                requestAnimationFrame(update);
+            }
+        };
+        requestAnimationFrame(update);
+
+        function done() {
+            setTimeout(function() {
+                scrollingElement.scrollTop = 0;
+                location.reload();
+            }, endDelay || 0);
+        }
+    }, initialDelay || 0);
+}
+</script>
+
+<script type="text/javascript">
+setInterval(function () {
+  $.get('/compact.html').then(function (content) {
+    var data = new DOMParser().parseFromString(content, 'text/html').getElementById('standings');
+    document.getElementById('standings').replaceWith(data);
+  })
+}, 15 * 1000);
+</script>
+</html>

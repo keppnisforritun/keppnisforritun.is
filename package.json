@@ -26,7 +26,8 @@
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "gatsby-source-filesystem": "^5.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-spoiler": "^0.4.3"
   },
   "devDependencies": {
     "cross-env": "^7.0.3"

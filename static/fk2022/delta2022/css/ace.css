@@ -1,0 +1,26 @@
+/* Ace editor */
+
+.source-code-editor {
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* styles extracted from highlight.tpl */
+.source-highlight,
+.source-code-editor {
+    white-space: pre;
+    font: 15px "Monaco", "Menlo", "Ubuntu Mono", "Consolas", "source-code-pro", "Droid Sans Mono", monospace !important;
+    tab-size: 4;
+}
+
+.ace_static_highlight {
+    font-size: 15px;
+    line-height: normal;
+}
+
+.ace_hidden-cursors {
+    opacity: 0;
+}

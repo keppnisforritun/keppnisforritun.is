@@ -1,0 +1,74 @@
+#session-header-wrap {
+    width: 100%;
+}
+
+#session_banner {
+    display: flex;
+}
+
+#session_banner img {
+    margin: 0 auto 15px auto;
+    max-width: 100%;
+}
+
+.contest-progress .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contest-progress h4 {
+    display: inline;
+    margin: 0 5px 0 0;
+}
+
+.contest-progress .progress {
+    margin-top: 10px;
+    margin-bottom: 13px;
+    position: relative;
+    height: 6px;
+
+    box-sizing: border-box;
+    background-color: #DCDCDC;
+    border-radius: 15px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contest-progress .progress-bar {
+    position: relative;
+    top: -5px;
+    height: 18px;
+
+    background-color: #4AAE4B;
+    border-radius: 15px;
+}
+
+.contest-progress.session-notstarted .progress-bar, .contest-progress.session-nostart .progress-bar {
+    background-color: #DCDCDC;
+}
+
+.contest-progress .progress-status {
+    position: relative;
+    font-size: 0.9em;
+    display: none;
+    top: -21px;
+    text-align: center;
+    color: white;
+}
+
+.contest-progress .progress-status.notstarted, .contest-progress .progress-status.nostart {
+    color: black;
+}
+
+.contest-progress.session-nearend .nearend,
+.contest-progress.session-finished .finished,
+.contest-progress.session-notstarted .notstarted,
+.contest-progress.session-nostart .nostart {
+    display: block;
+}
+
+.contest-progress.session-notstarted .only_in_contest,
+.contest-progress.session-nostart .only_in_contest,
+.contest-progress.session-finished .only_in_contest {
+    display: none;
+}

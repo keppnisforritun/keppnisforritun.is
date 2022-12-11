@@ -1,0 +1,149 @@
+@font-face {
+  font-family: 'kattis_font';
+  src: url("fonts/kattis_font.eot?xfghy5");
+  src: url("fonts/kattis_font.eot?xfghy5#iefix") format("embedded-opentype"), url("fonts/kattis_font.ttf?xfghy5") format("truetype"), url("fonts/kattis_font.woff?xfghy5") format("woff"), url("fonts/kattis_font.svg?xfghy5#kattis_font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'kattis_font' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-fsharp:before {
+  content: "\e935"; }
+
+.icon-c:before {
+  content: "\e600"; }
+
+.icon-csharp:before {
+  content: "\e601"; }
+
+.icon-objectivec:before {
+  content: "\e602"; }
+
+.icon-go:before {
+  content: "\e603"; }
+
+.icon-haskell:before {
+  content: "\e604"; }
+
+.icon-java:before {
+  content: "\e605"; }
+
+.icon-javascriptspidermonkey:before {
+  content: "\e606"; }
+
+.icon-php:before {
+  content: "\e607"; }
+
+.icon-python2:before {
+  content: "\e608"; }
+
+.icon-python3:before {
+  content: "\e608"; }
+
+.icon-ruby:before {
+  content: "\e609"; }
+
+.icon-fortran:before {
+  content: "\e900"; }
+
+.icon-cpp:before {
+  content: "\e60a"; }
+
+.icon-inprogress:before {
+  content: "\e60b"; }
+
+.icon-gavel:before {
+  content: "\e60c"; }
+
+.icon-prolog:before {
+  content: "\e800"; }
+
+.icon-user:before {
+  content: "\e91b"; }
+
+.icon-pascal:before {
+  content: "\e91c"; }
+
+.icon-bitbucket:before {
+  content: "\e91d"; }
+
+.icon-stackoverflow:before {
+  content: "\e91e"; }
+
+.icon-googleplus:before {
+  content: "\e91f"; }
+
+.icon-linkedin:before {
+  content: "\e920"; }
+
+.icon-facebook:before {
+  content: "\e921"; }
+
+.icon-skype:before {
+  content: "\e922"; }
+
+.icon-github:before {
+  content: "\e923"; }
+
+.icon-clock:before {
+  content: "\e924"; }
+
+.icon-edit:before {
+  content: "\e925"; }
+
+.icon-archive:before {
+  content: "\e926"; }
+
+.icon-delete:before {
+  content: "\e927"; }
+
+.icon-gravatar:before {
+  content: "\e928"; }
+
+.icon-stackexchange:before {
+  content: "\e929"; }
+
+.icon-plagiarism3:before {
+  content: "\e92a"; }
+
+.icon-plagiarism2:before {
+  content: "\e92b"; }
+
+.icon-plagiarism1:before {
+  content: "\e92c"; }
+
+.icon-scala:before {
+  content: "\e92d"; }
+
+.icon-paw:before {
+  content: "\e92e"; }
+
+.icon-kotlin:before {
+  content: "\e92f"; }
+
+.icon-javascript:before {
+  content: "\e930"; }
+
+.icon-rust:before {
+  content: "\e931"; }
+
+.icon-ocaml:before {
+  content: "\e932"; }
+
+.icon-lisp:before {
+  content: "\e933"; }
+
+.icon-cobol:before {
+  content: "\e934"; }

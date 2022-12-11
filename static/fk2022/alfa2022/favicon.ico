@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Load sentry as early as possible -->
+    
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>404: Not Found &ndash; Kattis, Alfa 2022</title>
+
+    <!-- Jquery and Jquery-ui -->
+    <link href="/assets/b3b5b8a9e24cad13e6c05102611b435c/jquery-ui-dist/jquery-ui.theme.min.css" rel="stylesheet">
+    <script src="/assets/b3b5b8a9e24cad13e6c05102611b435c/jquery/dist/jquery.min.js"></script>
+    <script src="/assets/b3b5b8a9e24cad13e6c05102611b435c/jquery-ui-dist/jquery-ui.min.js"></script>
+
+    <!-- Timezone Cookie -->
+    <script type="module" src="/js/1aa088db91e178e566a348906e43a13c/modules/timezone.js"></script>
+
+    <!-- Fonts/Icons -->
+    <link href="/assets/b3b5b8a9e24cad13e6c05102611b435c/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <link href="/assets/b3b5b8a9e24cad13e6c05102611b435c/google_web_fonts/google_web_fonts.css" rel="stylesheet" type="text/css">
+
+    <!-- DateRangePicker CSS -->
+    <link href="/assets/b3b5b8a9e24cad13e6c05102611b435c/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Editable and Select2 -->
+    <link href="/assets/b3b5b8a9e24cad13e6c05102611b435c/select2/dist/css/select2.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon" />
+
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="/css/style.css?f7b849=">
+    <style type="text/css">           :root {
+                      --branding-border: linear-gradient(to left, #e7b763 0%, #e47f43 38%);
+              }
+
+         </style>
+
+    <script type="text/javascript">
+        window.page_loaded_at = new Date();
+        jQuery.noConflict();
+    </script>
+
+    <script type="text/javascript">
+    jQuery.ns = function (namespace) {
+        var parts = namespace.split('.');
+        var last = window;
+        for (var i = 0; i < parts.length; i++) {
+            last = last[parts[i]] || (last[parts[i]] = {});
+        }
+        return last;
+    };
+</script>
+     <script>
+const KattisErrorMessages = {"INTERNAL_SERVER_ERROR":"Internal server error.","ACCESS_DENIED":"Access denied.","NOT_AUTHENTICATED":"Not authenticated.","METHOD_NOT_ALLOWED":"Method not allowed.","INVALID_JSON":"JSON cannot be decoded or encoded data is deeper than the recursion limit.","BAD_CSRF_TOKEN":"Token does not match session's csrf_token","SESSION_NAME_EMPTY":"Session's name must be non empty.","SESSION_START_TIME_EMPTY":"Session's start time must be non empty.","SESSION_START_TIME_PASSED":"Session's start time has already passed.","SESSION_DURATION_EMPTY":"Session's duration must be non empty.","SESSION_DURATION_NEGATIVE":"Session's duration must be a positive number.","SESSION_DURATION_EXCEEDED":"Maximum duration for the session was exceeded.","SESSION_ALREADY_STARTED":"The session has already started.","SESSION_ALREADY_FINISHED":"The session is already finished.","USER_CREATED_SESSION_DURATION_EXCEEDED":"Contest cannot be longer than 168 hours.","INVALID_PROBLEM_SCORE":"Invalid problem score.","INVALID_SESSION_SHORTNAME":"Invalid shortname for the session.","INVALID_SESSION_CUTOFF":"Invalid cutoff for the session.","INVALID_USER_NAME":"Invalid username or email.","SESSION_NOT_FOUND":"No such session.","COURSE_NOT_FOUND":"No such course.","OFFERING_NOT_FOUND":"No such offering.","TEACHER_NOT_FOUND":"No such teacher.","TEACHER_CANNOT_REMOVE_SELF":"You may not remove yourself as a teacher unless you are an administrator.","AUTHOR_NOT_FOUND":"No such author.","JUDGE_NOT_FOUND":"No such judge.","JUDGE_ALREADY_EXIST":"The user is already a judge.","TEACHER_ALREADY_EXIST":"The user is already a teacher.","PROBLEM_NOT_FOUND":"No such problem.","TEAM_NOT_FOUND":"No such team.","SESSION_PROBLEM_ALREADY_EXIST":"The problem has been already added to the session.","SESSION_PROBLEM_DOES_NOT_EXIST":"The problem does not relate to the session.","PROBLEM_INDEX_NEGATIVE":"Problem index must be non negative.","AUTHOR_IS_CURRENT_TEAM_MEMBER":"The user you tried to add is already a member of the current team.","AUTHOR_IS_ANOTHER_TEAM_MEMBER":"The user you tried to add is already a member of another team in the current session.","AUTHOR_IS_JUDGE":"The user you tried to add is a judge.","AUTHOR_IS_NOT_TEAM_MEMBER":"The user you tried to remove is not a team member.","JUDGE_IS_TEAM_MEMBER":"The user you tried to add is a session team member or invitee.","SESSION_PUBLISHING_DENIED":"You do not have permission to publish this session.","CANNOT_PUBLISH_HISTORICAL_SESSION":"You cannot publish a session with a historical start time.","INVALID_TEAM_NAME_TOO_LONG":"The team name you are trying to add is too long","TEAM_NAME_IS_NOT_VISIBLE":"The team name you are trying to add is not visible"};
+jQuery.extend(jQuery.ns('Kattis.error'), (function () {
+    return {
+        get_msg: function (error_code) {
+            return KattisErrorMessages[error_code];
+        },
+
+        show_msg: function (base_message, error_code) {
+            if (error_code) {
+                alert(base_message + ": " + this.get_msg(error_code));
+            } else {
+                alert(base_message);
+            }
+        },
+
+        show_xhr_msg: function (elem, jqXHR) {
+            var base_message = elem.data('fail-msg');
+            var code = jqXHR.responseJSON && jqXHR.responseJSON.error &&
+                       jqXHR.responseJSON.error.code;
+            this.show_msg(base_message, code);
+        }
+    }
+})());
+</script>
+ 
+    
+
+    
+    
+</head>
+
+<body class="page-master-layout  page-contest">
+
+
+
+
+<header class="l-page_header">
+    <div class="page_header-wrapper">
+        <div class="logo-container">
+            <a class="logo-link" href="/">
+                <img class="logo" src="/images/site-logo" alt="Alfa 2022 logo" />
+            </a>
+            <h4 class="logo-container-text">Alfa 2022</h4>
+            <button class="menu_mobile_link" >
+                <i class="fas fa-bars menu_mobile_link_icon"></i>
+            </button>
+            <script type="module" src="/js/1aa088db91e178e566a348906e43a13c/pages/master/nav.js"></script>
+        </div>
+        <div class="page_header-content">
+            <nav>
+                <ul class="main_menu">
+                                                                    <li>
+                            <a href="/standings" class="main_menu-item main_menu-item_link  ">
+                                                                    <i class="fas fa-award main_menu-item_icon"></i>
+                                                                Standings
+                            </a>
+                        </li>
+                                    </ul>
+            </nav>
+            
+        </div>
+    </div>
+</header>
+
+
+
+<main class="l-offset_main">
+
+
+<div class="top_bar">
+    <script type="module" src="/js/1aa088db91e178e566a348906e43a13c/pages/master/top_bar.js"></script>
+    <div class="branding_border"></div>
+            <div class="top_bar-content-wrapper">
+            <div class="top_bar-section top_bar-section-large">
+                <div class="breadcrumb top_bar-item">
+                                                            <span class="breadcrumb-current">
+                                                    404: Not Found
+                                            </span>
+                </div>
+
+                
+            </div>
+
+            <div class="top_bar-section tooltip-right-container top_bar-section-small">
+
+                
+                                    <a href="/login" class="button button-primary button-small">Log in</a>
+                            </div>
+        </div>
+    </div>
+
+        
+
+
+
+
+        
+
+
+            
+
+
+    
+                    <div class="l-strip_list l-strip_list-gap">
+                <div class="strip">
+                    <div class="strip-item">
+                        <div id="session-header-wrap"><div id="session_banner"><img src="/images/sessions/fk2022alpha" alt="" /></div><div id="contest_time" data-props="{&quot;has_start&quot;:true,&quot;elapsed_seconds&quot;:99970,&quot;total_seconds&quot;:&quot;21600&quot;,&quot;refresh_at_start&quot;:true}">
+    <div class="contest-progress session-finished">
+            <div class="info upper">
+                <div class="contest-start">
+                    <h4>Start</h4>
+                    2022-03-19 11:00 CET
+                </div>
+                <div class="contest-title">
+                    <h2 class="title">Alfa 2022</h2>
+                </div>
+                <div class="contest-end">
+                    <h4>End</h4>
+                    2022-03-19 17:00 CET
+                </div>
+            </div>
+        <div class="progress">
+                                                                <div class="progress-bar" style="width: 100.00%"></div>
+            <div class="progress-status nearend">
+                The end is near!            </div>
+
+            <div class="progress-status finished">
+                Contest is over.            </div>
+
+            <div class="progress-status nostart">
+                Not yet started.            </div>
+
+            <div class="progress-status notstarted">
+                Contest                is starting in                <span class="countdown">-1 day 3:46:10</span>
+            </div>
+        </div>
+
+        <div class="info only_in_contest">
+            <div>
+                <h4>Time elapsed</h4>
+                <span class="count_elapsed">6:00:00</span>
+            </div>
+            <div>
+                <h4>Time remaining</h4>
+                <span class="count_remaining">0:00:00</span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+            
+
+    
+    
+    <div class="strip status-page strip-item-tight">
+        <h1>404: Not Found</h1>
+        <img src="/images/kattis/judge.png?7f7dbf=" />
+        <p>We&#039;re sorry, Kattis couldn&#039;t find what you were looking for.</p>
+        <p>Maybe you should head back to the <a href="/">main page</a>.</p>
+    </div>
+
+
+    
+
+</main>
+
+
+
+<!--
+<div id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-info col-md-2 ">
+                
+                            </div>
+            <div class="footer-powered col-md-8">
+                <h4>
+                                    Powered by&nbsp;Kattis                                  </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+-->
+
+
+
+    <script type="module" src="/js/1aa088db91e178e566a348906e43a13c/pages/contest/header.js"></script>
+<script src="/assets/b3b5b8a9e24cad13e6c05102611b435c/moment/min/moment.min.js"></script>
+<script src="/assets/b3b5b8a9e24cad13e6c05102611b435c/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="/assets/b3b5b8a9e24cad13e6c05102611b435c/select2/dist/js/select2.full.min.js"></script>
+<script src="/assets/b3b5b8a9e24cad13e6c05102611b435c/raphael/raphael.min.js"></script>
+
+
+
+
+</body>
+</html>
