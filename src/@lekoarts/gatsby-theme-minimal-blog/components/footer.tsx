@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Link } from "theme-ui";
 import useSiteMetadata from "@lekoarts/gatsby-theme-minimal-blog/src/hooks/use-site-metadata";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => {
   const { siteTitle } = useSiteMetadata();
@@ -22,6 +23,15 @@ const Footer = () => {
     >
       <div>
         &copy; {new Date().getFullYear()}, {siteTitle}.
+      </div>
+      <div>
+        <a href="https://www.computer.is/">
+          <StaticImage
+            src="../../../../static/computer-is.png"
+            sx={{ "max-width": "220px" }}
+            quality={100}
+          />
+        </a>
       </div>
       <div>
         <Link
