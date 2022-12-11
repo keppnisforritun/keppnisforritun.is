@@ -1,0 +1,37 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    name: Publish to Cloudflare Pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Ndoe dependencies
+        run: npm ci
+
+      - name: Install Gatsby CLI
+        run: npm install -g gatsby-cli@5.2.0
+
+      - name: Build
+        run: gatsby build
+
+      - name: Verify build
+        run: ls -la public
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: e51a6216f6fc6cef01864e14fe47b1dc
+          projectName: keppnisforritun-is
+          directory: public
