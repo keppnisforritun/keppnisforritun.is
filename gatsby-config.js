@@ -134,6 +134,7 @@ module.exports = {
         openAnalyzer: false,
       },
     },
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
   ].filter(Boolean),
