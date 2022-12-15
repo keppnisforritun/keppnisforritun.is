@@ -13,21 +13,28 @@ const Header = () => {
 
   return (
     <header sx={{ mb: [3, 4] }}>
-      <Flex>
+      <Flex
+        sx={{
+          flexDirection: [`column`, `row`, `row`],
+          alignItems: [`center`, `flex-start`, `flex-start`],
+        }}
+      >
         <StaticImage
           src="../../../../static/icon.png"
           alt="Logo"
           loading="eager"
-          layout="fullWidth"
+          layout="constrained"
           placeholder="none"
           sx={{
-            my: "3",
+            my: ["1", "3", "3"],
             marginLeft: "3",
             marginRight: "4",
-            width: ["35px", "45px", "45px"],
+            width: ["50px", "45px", "45px"],
           }}
         />
-        <Flex sx={{ flexDirection: `column`, mt: "3" }}>
+        <Flex
+          sx={{ flexDirection: `column`, mt: "3", mb: ["3", "none", "none"] }}
+        >
           <HeaderTitle />
           <div
             sx={{
@@ -45,12 +52,14 @@ const Header = () => {
           boxSizing: `border-box`,
           display: `flex`,
           variant: `dividers.bottom`,
-          alignItems: `center`,
+          alignItems: [`flex-start`, `flex-start`, `center`],
           justifyContent: `space-between`,
           mt: 3,
           color: `secondary`,
           a: { color: `secondary`, ":hover": { color: `heading` } },
           flexFlow: `wrap`,
+          flexDirection: [`column`, `column`, `row`],
+          minHeight: ["85px", "85px", "0"],
         }}
       >
         <Navigation nav={nav} />

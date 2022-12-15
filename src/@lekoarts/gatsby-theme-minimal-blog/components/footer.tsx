@@ -19,6 +19,7 @@ const Footer = () => {
         },
         flexDirection: [`column`, `column`, `row`],
         variant: `dividers.top`,
+        minHeight: ["140px", "140px", "0"],
       }}
     >
       <div>

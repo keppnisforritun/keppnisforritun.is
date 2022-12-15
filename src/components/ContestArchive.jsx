@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import { graphql, Link, useStaticQuery } from "gatsby";
+import { jsx, Link } from "theme-ui";
+import { graphql, useStaticQuery } from "gatsby";
 
 const ContestArchive = ({ name }) => {
   const data = useStaticQuery(graphql`
