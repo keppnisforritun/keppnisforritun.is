@@ -33,7 +33,7 @@ const ContestArchive = ({ name }) => {
         {contests.map((node) => {
           return (
             <li key={node.frontmatter.slug}>
-              <Link to={node.frontmatter.slug}>
+              <Link href={node.frontmatter.slug}>
                 {node.frontmatter.title.replace(name, "").trim()}
               </Link>
             </li>
