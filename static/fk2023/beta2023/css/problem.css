@@ -1,0 +1,223 @@
+.minipage {
+    width: auto !important;
+}
+.enumerate li {
+    list-style-type: decimal;
+    margin-left: 20px;
+}
+.enumerate li:first-child {
+    margin-top: 5px;
+}
+.enumerate li:last-child {
+    margin-bottom: 10px;
+}
+
+.tabular {
+    margin-bottom: 20px;
+}
+.tabular th {
+    padding: 10px;
+}
+.tabular td{
+    padding: 10px;
+    border-color: #B6B6BB;
+}
+.tabular td p {
+    margin: 0;
+}
+
+div.illustration {
+    float: right;
+    padding-left: 20px;
+}
+div.illustration .illustration {
+    width: 100%;
+    border-radius: 4px;
+}
+div.figure {
+    display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Merriweather", serif;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+
+div.figure .caption {
+    margin-top: 15px;
+}
+
+div.description {
+    color: #898992;
+    font-style: italic;
+    font-family: "Merriweather", serif;
+    font-size: 12px;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.table-sample, table.sample {
+    margin-top: 20px;
+}
+.table-sample > tbody > tr > th,
+.table-sample > tfoot > tr > th,
+.table-sample tr > th,
+table.sample > tbody > tr > th,
+table.sample > tfoot > tr > th,
+table.sample tr > th {
+    border-top: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #2A353A;
+}
+
+table.sample {
+    width: 100%;
+    margin-bottom: 20px;
+    table-layout: fixed;
+}
+table.sample td,
+table.sample th {
+    padding: 4px;
+    vertical-align: baseline;
+    width: 50%;
+}
+table.sample td pre,
+table.sample th pre {
+    border-radius: 5px;
+    border: solid 1px #d9d9d9;
+    background-color: #f3f3f9;
+    padding: 14px 13px;
+    font-family: Courier, monospace;
+
+    max-width: 410px;
+    position: relative;
+    overflow: auto;
+}
+table.sample th {
+    font-family: "Merriweather", serif;
+}
+table.sample td {
+    position: relative;
+}
+table.sample td .copy-to-clipboard {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 8px;
+    top: 24px;
+    background-image: url(/images/files-o.svg);
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-position: top 4px right 4px;
+    opacity: 0.2;
+    cursor: pointer;
+}
+table.sample td .copy-to-clipboard:hover {
+    opacity: 1;
+}
+
+div.sampleinteractionread {
+    width: 60%;
+    margin: 3px 0px 3px 0px;
+}
+div.sampleinteractionread pre {
+    margin: 1px 5px 1px 5px;
+
+    border-radius: 5px;
+    border: solid 1px #d9d9d9;
+    background-color: #f3f3f9;
+    padding: 14px 13px;
+    font-family: Courier, monospace;
+}
+div.sampleinteractionwrite {
+    width: 60%;
+    margin: 3px 0px 3px 0px;
+    margin-left: auto;
+}
+div.sampleinteractionwrite pre {
+    margin: 1px 5px 1px 5px;
+
+    border-radius: 5px;
+    border: solid 1px #d9d9d9;
+    background-color: #f3f3f9;
+    padding: 14px 13px;
+    font-family: Courier, monospace;
+}
+
+.problembody {
+    line-height: 24px;
+    font-family: 'Merriweather', serif;
+    margin-top: 15px;
+}
+
+.problembody h2 {
+    padding: 0;
+    line-height: 1.53;
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
+}
+
+.problembody dd {
+    display: inline;
+    margin: 0 0 0 40px;
+    float: none;
+    padding: 5px 0;
+}
+
+.description:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+div.problembody {
+    text-align: justify;
+}
+
+.problembody dt {
+    float: left;
+    clear: left;
+    margin: 0;
+    padding: 7px 7px 0 0;
+}
+.problembody ul {
+    padding-left: 40px;
+}
+.problembody ol {
+    padding-left: 20px;
+}
+.problembody .scshape {
+    font-variant: small-caps;
+    font-size: 1.1em;
+}
+.problembody pre {
+    overflow-x: auto;
+}
+
+.problembody img {
+    max-width: 100%;
+}
+
+dl.hanging-indent dd {
+    margin-left: 40px;
+}
+
+blockquote {
+    background: #F7F8F9;
+    font-style: italic;
+    font-size: 16px;
+    padding: 20px 30px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+blockquote > div {
+    font-size: 14px;
+    color: #898992;
+}

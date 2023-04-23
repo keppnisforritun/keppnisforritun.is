@@ -1,0 +1,149 @@
+.contest-progress-bar {
+    position: relative;
+    background-color: var(--color-light-gray-3);
+    height: 10px;
+}
+
+.contest-progress-bar .progress {
+    background-color: var(--color-green-100);
+    width: 0px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.contest-progress-bar .freeze-time {
+    background-color: var(--color-blue-freeze);
+    opacity: 0.6;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.contest-progress-bar .freeze-time-head {
+    background-color: var(--color-blue-freeze);
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    font-size: small;
+    top: -5px;
+    border-radius: 99999px;
+}
+
+.contest-progress.session-notstarted .only_in_contest,
+.contest-progress.session-nostart .only_in_contest,
+.contest-progress.session-finished .only_in_contest {
+    display: none !important;
+}
+
+.contest-progress:not(.session-notstarted) .only_before_contest {
+    display: none !important;
+}
+
+.contest-progress:not(.session-finished) .finished {
+    display: none !important;
+}
+
+.contest-stats {
+    background-color: white;
+    min-height: 46px;
+    padding-left: 27px;
+    gap: 15px;
+}
+
+.contest-stats .rank-box {
+    margin-left: 4px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-radius: 5px;
+    border: 1px solid var(--color-light-gray-2);
+}
+
+.contest-stats .team-name {
+    margin-left: 4px;
+    min-width: 130px;
+    max-width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.contest-stats .team-name a {
+    font-size: medium;
+}
+
+.contest-stats .problems span {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 720px) {
+    .contest-stats {
+        display: flex;
+        flex-direction: column;
+        margin-top: 45px;
+        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.08);
+        border-radius: 3px;
+        padding-left: 0;
+    }
+
+    .contest-stats .rank-box {
+        margin: -25px auto 10px auto;
+        background-color: white;
+        padding: 15px 25px;
+        box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+        border: 0;
+    }
+
+    .contest-stats .rank-box span, .contest-stats .rank-box i {
+        font-size: var(--font-xlarge) !important;
+        font-weight: bold;
+    }
+
+    .contest-stats .team-name {
+        min-width: auto;
+        max-width: auto;
+        margin-left: 0;
+        font-weight: bold;
+        text-overflow: unset;
+        overflow: visible;
+        text-align: center;
+        white-space: normal;
+        margin-top: 20px;
+    }
+
+    .contest-stats .problems {
+        margin-bottom: 20px;
+    }
+
+    .contest-stats .problems i {
+        font-size: var(--font-xxlarge) !important;
+    }
+}
+
+#session_banner {
+    margin-bottom: 24px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+#session_banner a {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+}
+
+#session_banner img {
+    max-width: 100%;
+}

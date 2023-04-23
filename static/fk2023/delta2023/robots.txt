@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /submissions
+Disallow: /users
+Disallow: /problems
+Disallow: /relay
+Disallow: /cdn-cgi/

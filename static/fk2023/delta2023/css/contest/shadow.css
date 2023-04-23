@@ -1,0 +1,27 @@
+.rejudge_summary td {
+    border: 1px white;
+}
+
+.rejudge_summary td.no_change {
+    background: #c2f8b8;
+}
+
+.rejudge_summary td.change {
+    background: #ffab9f;
+}
+
+.rejudge_summary td.no_change_filtered_out {
+    background: #e3ffe2;
+}
+
+.rejudge_summary td.change_filtered_out {
+    background: #ffdfda;
+}
+
+.rejudge_summary td.unjudged {
+    background: #cbcbcb;
+}
+
+.rejudge_summary td.unjudged_filtered_out {
+    background: #cbcbcb;
+}

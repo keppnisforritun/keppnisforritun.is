@@ -1,0 +1,130 @@
+@media print {
+
+    /* General print styles */
+    @page {
+        margin-top: 20px;
+        /* margin-bottom: 0; */
+    }
+
+    body {
+        background: #fff !important;
+    }
+
+    .separator {
+        display: none !important;
+    }
+
+    .report_grid-skill {
+        flex-wrap: nowrap !important;
+    }
+
+    .is-accepted,
+    .is-rejected,
+    .is-info,
+    .is-hidden,
+    .is-empty,
+    .summary_list-item-light,
+    .difficulty_number,
+    .difficulty_number_test,
+    .branding_border,
+    .problem_input {
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .ace_line {
+        overflow-wrap: anywhere;
+    }
+
+    .problem_input {
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+        display: block !important;
+    }
+
+    table.sample td pre,
+    table.sample th pre {
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+    }
+
+    table.sample {
+        page-break-inside: avoid;
+    }
+
+    /* Print styles for the problem page */
+    .l-page_header {
+        display: none !important;
+    }
+
+    .l-offset_main {
+        margin: 0 !important;
+        transition: none !important;
+    }
+
+    .book-page {
+        box-shadow: none !important;
+    }
+    
+    .top_bar {
+        display: none !important;
+    }
+
+    .book-container {
+        display: block !important;
+    }
+
+    #instructions-container {
+        page-break-after: always;
+    }
+
+    #instructions-close {
+        display: none !important;
+    }
+
+    .tabular {
+        display: inline-block !important;
+        page-break-inside: avoid;
+    }
+
+    .sampleinteractionwrite {
+        display: inline-block !important;
+        margin-left: 40% !important;
+    }
+
+    .sampleinteractionread {
+        display: inline-block !important;
+    }
+
+    #edit-and-submit-tab {
+        display: none !important;
+    }
+
+    #metadata-tab {
+        display: block !important;
+        width: 100% !important;
+        position: relative !important;
+    }
+
+    #metadata-tab .strip-plain {
+        display: none;
+    }
+
+    .metadata_list-item:is(
+        [data-name="metadata_item-statistics"],
+        [data-name="metadata_item-downloads"],
+        [data-name="metadata_item-my_submissions"],
+        [data-name="metadata_item-submissions"]
+    ) {
+        display: none !important;
+    }
+
+    .metadata_list-item a {
+        color: black;
+    }
+
+    /* Hide the help widget */
+    .launcher-button {
+        display: none !important;
+    }
+
+}
