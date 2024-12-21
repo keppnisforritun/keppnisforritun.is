@@ -41,6 +41,10 @@ module.exports = {
             title: `Um félagið`,
             slug: `/um-felagid`,
           },
+          {
+            title: `Dagatal`,
+            slug: `/dagatal`,
+          },
         ],
         externalLinks: [
           {
