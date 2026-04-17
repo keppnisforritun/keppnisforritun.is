@@ -26,13 +26,24 @@ const Footer = () => {
         &copy; {new Date().getFullYear()}, {siteTitle}.
       </div>
       <div>
-        <a href="https://www.computer.is/">
+        <a href="https://aftra.io/">
           <StaticImage
-            src="../../../../static/computer-is.png"
-            sx={{ maxWidth: "220px" }}
+            src="../../../../static/aftra-dark.png"
+            sx={{maxWidth: "220px" }}
             quality={100}
             placeholder="none"
-            alt="computer.is"
+            alt="Aftra"
+          />
+        </a>
+      </div>
+      <div>
+        <a href="https://syndis.com/">
+          <StaticImage
+            src="../../../../static/syndis-dark.png"
+            sx={{maxWidth: "220px" }}
+            quality={100}
+            placeholder="none"
+            alt="Syndis"
           />
         </a>
       </div>
