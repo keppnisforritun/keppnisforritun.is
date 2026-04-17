@@ -18,7 +18,6 @@ module.exports = {
     siteImage: `/logo/Logo-Black-768x462.png`,
     author: `Stjórn Keppnisforritunarfélags Íslands`,
   },
-  trailingSlash: `never`,
   plugins: [
     {
       resolve: `@lekoarts/gatsby-theme-minimal-blog`,
@@ -54,6 +53,10 @@ module.exports = {
           {
             name: `Discord`,
             url: `https://discord.gg/Umz2pJz`,
+          },
+          {
+            name: `LinkedIn`,
+            url: `https://www.linkedin.com/company/keppnisforritunarf%C3%A9lag-%C3%ADslands`,
           },
           {
             name: `Facebook`,
