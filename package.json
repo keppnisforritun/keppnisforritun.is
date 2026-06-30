@@ -25,7 +25,9 @@
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-plugin-sitemap": "^6.0.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
+    "gatsby-remark-responsive-iframe": "^6.16.0",
     "gatsby-source-filesystem": "^5.2.0",
+    "gatsby-transformer-remark": "^6.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-spoiler": "^0.4.3"
