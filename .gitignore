@@ -70,3 +70,6 @@ public
 
 # We use yarn
 package-lock.json
+
+# Yarn cache
+.yarn/install-state.gz
