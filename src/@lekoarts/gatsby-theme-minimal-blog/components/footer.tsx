@@ -25,27 +25,37 @@ const Footer = () => {
       <div>
         &copy; {new Date().getFullYear()}, {siteTitle}.
       </div>
-      <div>
-        <a href="https://aftra.io/">
-          <StaticImage
-            src="../../../../static/aftra-dark.png"
-            sx={{maxWidth: "220px" }}
-            quality={100}
-            placeholder="none"
-            alt="Aftra"
-          />
-        </a>
-      </div>
-      <div>
-        <a href="https://syndis.com/">
-          <StaticImage
-            src="../../../../static/syndis-dark.png"
-            sx={{maxWidth: "220px" }}
-            quality={100}
-            placeholder="none"
-            alt="Syndis"
-          />
-        </a>
+      <div
+        sx={{
+          display: `flex`,
+          justifyContent: `center`,
+          alignItems: `center`,
+          gap: 3,
+          flexWrap: `wrap`,
+        }}
+      >
+        <div>
+          <a href="https://aftra.io/">
+            <StaticImage
+              src="../../../../static/aftra-light.png"
+              sx={{ maxWidth: `220px` }}
+              quality={100}
+              placeholder="none"
+              alt="Aftra"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="https://syndis.com/">
+            <StaticImage
+              src="../../../../static/syndis-light.png"
+              sx={{ maxWidth: `220px` }}
+              quality={100}
+              placeholder="none"
+              alt="Syndis"
+            />
+          </a>
+        </div>
       </div>
       <div>
         <Link
